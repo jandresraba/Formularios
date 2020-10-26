@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h1>Bienvenido Formulario de Registro</h1>
+        <hr></hr>
+        <h:form>
+            <h:panelGrid columns="2" border="2">
+                <h:outputLabel value="Nombre "/>
+                <h:inputText value="#{indexController.nombre}"  style="width: 350px;"/>
+                <h:outputLabel value="Edad"/>
+                <h:inputText value="#{indexController.edad}"  style="width: 350px;"/>
+                <h:outputLabel value="Descripcion "/>
+                <h:inputTextarea value="#{indexController.descripcion}"  style="width: 350px;"/>
+                <h:outputLabel value="Dia actual "/>
+                <h:selectOneMenu value="#{indexController.dia}"  style="width: 350px;">
+                    <f:selectItem itemValue="Lunes" itemLabel="Lunes"/>
+                    <f:selectItem itemValue="Martes" itemLabel="Martes"/>
+                    <f:selectItem itemValue="Miercoles" itemLabel="Miercoles"/>
+                    <f:selectItem itemValue="Jueves" itemLabel="Jueves"/>
+                    <f:selectItem itemValue="Viernes" itemLabel="Viernes"/>
+                    <f:selectItem itemValue="Sabado" itemLabel="Sabado"/>
+                    <f:selectItem itemValue="Domingo" itemLabel="Domingo"/>
+                </h:selectOneMenu>
+                <h:outputLabel value="Genero"/>
+                <h:selectOneRadio value="#{indexController.genero}">
+                    <f:selectItem itemValue="Masculino" itemLabel="Mascullino"/>
+                    <f:selectItem itemValue="Femenino" itemLabel="Femenino"/>
+                </h:selectOneRadio>
+                
+                <h:outputLabel value="Profesion "/>
+                <h:selectManyCheckbox value="#{indexController.profesionSeleccionada}"  style="width: 350px;" layout="pageDirection">
+                    <f:selectItems value="#{indexController.profesionList}"/>
+                </h:selectManyCheckbox>
+            </h:panelGrid>
+            <br></br>
+            <h:commandButton action="datos" value="Enviar" style="width: 350px;"/>
+        </h:form>
+    </h:body>
+</html>
+
